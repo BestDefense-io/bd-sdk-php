@@ -210,4 +210,3 @@ This package is open-sourced software licensed under the [MIT license](LICENSE).
 If you encounter any issues or have questions, feel free to open an issue on [GitHub](https://github.com/bestdefense-io/bd-sdk-php/issues).
 
 Happy coding! 🚀
-```
