@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "BestdefenseIo\\BdSdkPhp\\": "src/"
+            "BestdefenseIo\\BdSdkPhp\\": "src/",
+            "BestdefenseIo\\BdSdkPhp\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -23,12 +24,15 @@
     },
     "minimum-stability": "alpha",
     "require": {
-        "php": "^7.4",
+        "php": ">=7.4",
         "guzzlehttp/guzzle": "^7.9",
         "guzzlehttp/promises": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.0",
         "systemhaus/guzzle-http-mock": "^2.1"
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }

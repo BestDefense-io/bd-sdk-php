@@ -1,0 +1,51 @@
+name: PHPUnit Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: [7.4, 8.0, 8.1, 8.2]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, json, xml, curl, xdebug
+          coverage: xdebug
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit --coverage-clover coverage.xml
+
+      - name: Upload coverage to Codecov
+        if: ${{ matrix.php-version == '8.2' }}
+        uses: codecov/codecov-action@v3
+        with:
+          files: build/logs/clover.xml
+          flags: unittests
+          name: Codecov Report
+          fail_ci_if_error: true
+
+      - name: Annotate code coverage
+        uses: php-actions/annotate-code-coverage@v1
+        with:
+          clover-file: build/logs/clover.xml
+          title: Code Coverage Report
+
+      - name: Display Coverage Summary
+        run: php scripts/coverage-summary.php

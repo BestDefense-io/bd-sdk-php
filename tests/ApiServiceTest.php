@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\YourSDK\Tests;
+namespace BestdefenseIo\BdSdkPhp\Tests;
 
 use PHPUnit\Framework\TestCase;
 use BestdefenseIo\BdSdkPhp\ApiService;
@@ -13,13 +13,16 @@ class ApiServiceTest extends TestCase
 {
     protected $apiToken = 'test-api-token';
     protected $accountId = 'test-account-id';
+
+    protected $host = 'api.bestdefense.io';
+
     protected $yourService;
 
     protected function setUp(): void
     {
         // Create a mock and queue responses.
         $mock = new MockHandler([
-            new Response(200, [], json_encode(['data' => 'test data'])),
+            new Response(200, [], json_encode(['data' => '{"test":"data"}'])),
             // Add more responses as needed
         ]);
 
@@ -28,7 +31,7 @@ class ApiServiceTest extends TestCase
         $client = new Client(['handler' => $handlerStack]);
 
         // Inject the mocked client into YourService
-        $this->yourService = new ApiService($this->apiToken, $this->accountId, '', $client);
+        $this->yourService = new ApiService($this->apiToken, $this->accountId, $this->host, $client);
     }
 
     public function testGetData()
@@ -36,7 +39,7 @@ class ApiServiceTest extends TestCase
         $response = $this->yourService->getData();
         $this->assertIsArray($response);
         $this->assertArrayHasKey('data', $response);
-        $this->assertEquals('test data', $response['data']);
+        $this->assertEquals('{"test":"data"}', $response['data']);
     }
 
     // Add more test methods for other functionalities

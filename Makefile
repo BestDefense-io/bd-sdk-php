@@ -1,11 +1,14 @@
 .PHONY: all
-all: install tests
+all: install dump-autoload tests
 
 .PHONY: install
 install:
 	composer install
 
+.PHONY: dump-autoload
+dump-autoload:
+	composer dump-autoload
 
 .PHONY: tests
 tests:
-	vendor/bin/phpunit
+	composer test

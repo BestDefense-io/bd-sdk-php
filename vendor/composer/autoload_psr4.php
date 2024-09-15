@@ -13,6 +13,7 @@ return array(
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+    'BestdefenseIo\\BdSdkPhp\\Tests\\' => array($baseDir . '/tests'),
     'BestdefenseIo\\BdSdkPhp\\' => array($baseDir . '/src'),
     'Aeris\\GuzzleHttpMock\\' => array($vendorDir . '/systemhaus/guzzle-http-mock/src'),
 );

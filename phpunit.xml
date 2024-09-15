@@ -9,5 +9,14 @@
         <include>
             <directory>./src</directory>
         </include>
+        <failOnLowCoverage>
+            <element name="elements" limit="80"/>
+        </failOnLowCoverage>
+        <exclude>
+            <directory>./src/Exceptions</directory>
+        </exclude>
     </coverage>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
 </phpunit>

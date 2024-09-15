@@ -33,6 +33,7 @@ class ComposerStaticInit784f9da9cb336cdf52c3c1e4134b24d8
         ),
         'B' => 
         array (
+            'BestdefenseIo\\BdSdkPhp\\Tests\\' => 29,
             'BestdefenseIo\\BdSdkPhp\\' => 23,
         ),
         'A' => 
@@ -70,6 +71,10 @@ class ComposerStaticInit784f9da9cb336cdf52c3c1e4134b24d8
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'BestdefenseIo\\BdSdkPhp\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
         ),
         'BestdefenseIo\\BdSdkPhp\\' => 
         array (
