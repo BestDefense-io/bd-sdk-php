@@ -1,6 +1,6 @@
 <?php
 
-$xml = new SimpleXMLElement(file_get_contents('build/logs/clover.xml'));
+$xml = new SimpleXMLElement(file_get_contents('coverage.xml'));
 
 $metrics = $xml->project->metrics;
 

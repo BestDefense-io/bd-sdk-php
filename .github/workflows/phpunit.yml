@@ -36,7 +36,7 @@ jobs:
         if: ${{ matrix.php-version == '8.2' }}
         uses: codecov/codecov-action@v3
         with:
-          files: build/logs/clover.xml
+          files: coverage.xml
           flags: unittests
           name: Codecov Report
           fail_ci_if_error: true
