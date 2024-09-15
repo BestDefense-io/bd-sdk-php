@@ -36,15 +36,15 @@ jobs:
       - name: Run PHPUnit
         run: vendor/bin/phpunit
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        with:
-          files: coverage.xml
-          flags: unittests
-          name: Codecov Report
-          fail_ci_if_error: true
+#      - name: Upload coverage to Codecov
+#        uses: codecov/codecov-action@v3
+#        env:
+#          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+#        with:
+#          files: coverage.xml
+#          flags: unittests
+#          name: Codecov Report
+#          fail_ci_if_error: true
 
 #      - name: Annotate code coverage
 #        uses: php-actions/annotate-code-coverage@v1
