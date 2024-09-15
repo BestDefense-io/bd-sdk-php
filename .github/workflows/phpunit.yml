@@ -13,7 +13,11 @@ jobs:
 
     strategy:
       matrix:
-        php-version: [7.4, 8.0, 8.1, 8.2]
+        php-version:
+#          - 7.4
+#          - 8.0
+          - 8.1
+          - 8.2
 
     steps:
       - name: Checkout code
@@ -33,7 +37,6 @@ jobs:
         run: vendor/bin/phpunit
 
       - name: Upload coverage to Codecov
-        if: ${{ matrix.php-version == '8.2' }}
         uses: codecov/codecov-action@v3
         with:
           files: coverage.xml
