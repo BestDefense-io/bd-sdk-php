@@ -22,7 +22,7 @@ class ApiServiceTest extends TestCase
     {
         // Create a mock and queue responses.
         $mock = new MockHandler([
-            new Response(200, [], json_encode(['data' => '{"test":"data"}'])),
+            new Response(200, [], json_encode(['data' => '{"test":"dasta"}'])),
             // Add more responses as needed
         ]);
 
