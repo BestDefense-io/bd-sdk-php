@@ -41,11 +41,11 @@ jobs:
           name: Codecov Report
           fail_ci_if_error: true
 
-      - name: Annotate code coverage
-        uses: php-actions/annotate-code-coverage@v1
-        with:
-          clover-file: build/logs/clover.xml
-          title: Code Coverage Report
+#      - name: Annotate code coverage
+#        uses: php-actions/annotate-code-coverage@v1
+#        with:
+#          clover-file: build/logs/clover.xml
+#          title: Code Coverage Report
 
       - name: Display Coverage Summary
         run: php scripts/coverage-summary.php
