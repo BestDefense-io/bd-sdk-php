@@ -1,0 +1,7 @@
+# src/Resources/config/services.yaml
+
+services:
+  BestdefenseIo\BdSdkPhp\ApiService:
+    arguments:
+      $apiToken: '%env(BESTDEFENSE_API_TOKEN)%'
+      $accountId: '%env(BESTDEFENSE_ACCOUNT_ID)%'

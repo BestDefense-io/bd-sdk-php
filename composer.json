@@ -1,0 +1,26 @@
+{
+    "name": "bestdefense-io/bd-sdk-php",
+    "description": "BestDefense.io - PHP SDK",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BestdefenseIo\\BdSdkPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dan Baddeley JR",
+            "email": "dan.baddeley@bestdefense.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BestdefenseIo\\BdSdkPhp\\Providers\\ApiServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "alpha",
+    "require": {}
+}
