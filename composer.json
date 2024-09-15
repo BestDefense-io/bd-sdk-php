@@ -33,6 +33,6 @@
         "systemhaus/guzzle-http-mock": "^2.1"
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit --no-coverage"
     }
 }
