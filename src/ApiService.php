@@ -19,8 +19,12 @@ class ApiService
     protected $host;
     protected $client;
 
-    public function __construct(string $apiToken, string $accountId, string $host = 'api.bestdefense.io', Client $client = null)
-    {
+    public function __construct(
+        string $apiToken,
+        string $accountId,
+        string $host = 'api.bestdefense.io',
+        Client $client = null
+    ) {
         $this->apiToken = $apiToken;
         $this->accountId = $accountId;
         $this->client = $client ?: new Client([
